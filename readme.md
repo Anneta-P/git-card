@@ -11,4 +11,37 @@
 5. Коли наводиш на блок - він має ставати трохи синіших
 6. Додавання transition
 
-![image_2022-06-27_13-43-17.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dad50bc2-66f9-4289-a69f-62e1ac5604e2/image_2022-06-27_13-43-17.png)
+#_title_
+Get awesome feuters, without extra changes
+
+#_second titile_
+The rise of mobile device transforms the way we comsume information entirely and the most relevant channels such as Facebook
+
+#_acrion-buttons_
+Monthly Annually
+Start free trail
+Subscribe Now
+
+#_Price card 1_
+$0/month
+Business Class
+For small teams or office
+Drag & Drop Builder
+1000's of Templates
+Blog Support Tools
+eCommerce State
+//Strat free trail
+
+#_Price card 2_
+$99/month
+For Best opportunities
+Drag & Drop Builder
+1000's of Templates
+Blog Support Tools
+eCommerce State
+//Subscribe Now
+Or Start 14 days trail
+
+#\_buttons
+Monthly
+Annually
