@@ -2,22 +2,23 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  font-family: 'Poppins', sans-serif;
   text-align: center;
   margin: 0 300px 0 300px;
+  height: 100vh;
+  flex-direction: column;
 }
 
 /* SECTIO-HEADER */
 
 .section-hero {
-  padding: 2.4rem 0 4.5rem 0;
+  padding: 0.4rem 0 1rem 0;
   background-color: #fff;
   width: 100%;
   text-align: center;
@@ -26,18 +27,17 @@ body {
 }
 
 .heading-primary {
-  font-size: 30px;
+  font-size: 25px;
   line-height: 1.6;
-  margin-bottom: 2rem;
-  color: rgb(21, 21, 21);
+  margin-bottom: 1rem;
+  color: rgb(27, 26, 26);
   width: 100%;
-  text-align: center;
 }
 
 .hero-description {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.6;
-  margin-bottom: 4.8rem;
+  margin-bottom: 1.4rem;
   color: rgb(109, 109, 109);
 }
 
@@ -51,30 +51,106 @@ body {
   text-align: center;
 }
 
-/* HERO_TOGGLE-SWITCH */
+/* TOGGLE-SWITCH */
 
-.switch-wrapper {
+.container {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+}
+.switch {
   position: relative;
-  display: inline-flex;
-  padding: 4px;
-  border: 1px solid rgb(152, 148, 148);
-  margin-bottom: 40px;
-  border-radius: 30px;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid grey;
 }
 
-.switch-wrapper label {
-  font-size: 16px;
+.switch input {
+  appearance: none;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background: #1e1e1e;
+  outline: none;
+}
+
+.switch input::before,
+.switch input::after {
+  z-index: 2;
+  position: absolute;
+  top: 56%;
+  transform: translateY(-50%);
+  font-weight: bolder;
+}
+
+.switch input::before {
+  content: 'Monthly';
+  left: 20px;
+}
+
+.switch input::after {
+  content: 'Annually';
+  right: 20px;
+}
+
+.switch input:checked {
+  background: #2500f9;
+}
+
+.switch label {
   z-index: 1;
-  min-width: 100px;
-  line-height: 32px;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: color 0.25s ease-in-out;
+  position: absolute;
+  top: 10px;
+  bottom: 4px;
+  border-radius: 20px;
+}
+
+.switch input {
+  transition: 0.25s;
+}
+
+.switch input:checked::after,
+.switch input:checked::before {
+  color: lightgrey;
+  transition: color 0.5s;
+}
+
+.switch input:checked + label {
+  left: 10px;
+  right: 100px;
+  background: white;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+
+.switch input:not(:checked) {
+  background: #2500f9;
+  transition: background 0.4s;
+}
+
+.switch input:not(:checked)::before {
+  color: #ffffff;
+  transition: color 0.5s;
+}
+
+.switch input:not(:checked)::after {
+  color: lightgray;
+  transition: color 0.5s 0.2s;
+}
+
+.switch input:not(:checked) + label {
+  left: 100px;
+  right: 10px;
+  background: #ffffff;
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
 }
 
 /* SECRION-CARDS */
 .section-cards {
-  display: flex;
+  display: inline-flex;
 }
 
 .card:hover {
@@ -84,16 +160,17 @@ body {
 
 .card {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  width: 350px;
+  width: 300px;
   height: auto;
   position: relative;
   border-radius: 5px;
   background-color: #fff;
   box-shadow: 0 3px 2px 0 rgba(24, 24, 163, 0.14),
-    0 1px 5px 0 rgba(54, 2, 198, 0.12), 0 3px 1px -3px rgba(0, 51, 255, 0.2);
+    0 1px 5px 0 rgba(54, 2, 198, 0.12);
+
   text-align: center;
   margin: 20px;
   transition: all 0.4s;
@@ -103,13 +180,19 @@ body {
 
 .card-header {
   width: 100%;
-  background-color: rgb(255, 252, 252);
-  color: #4a4a4a;
+  color: rgb(27, 26, 26);
+  margin: 0 20px 0 20px;
 }
 
 #first .card-header,
 #second .card-header {
-  background-color: rgb(236, 235, 235);
+  background-color: rgb(249, 250, 252);
+  /* box-shadow: 0 1px 5px 0 rgba(54, 2, 198, 0.12),
+    0 3px 1px -3px rgba(0, 51, 255, 0.2) inset; */
+}
+
+.card:first {
+  margin-top: 4.2rem;
 }
 
 .card-title {
@@ -119,7 +202,7 @@ body {
 }
 
 .card-title-description {
-  font-size: 20px;
+  font-size: 16px;
   font-weight: normal;
   line-height: 18px;
   color: darkgrey;
@@ -131,26 +214,25 @@ h2 {
   line-height: 66px;
   font-weight: 500;
   margin: 0;
+  margin-left: -3rem;
 }
 
 .price {
-  padding: 24px;
-  box-shadow: 0 0px 18px 5px rgba(0, 0, 0, 0.18),
-    0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 14px;
 }
 
 .price:after {
   content: '/month';
   font-size: 20px;
   position: absolute;
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-top: -9rem;
   color: #b9b9b8;
 }
 
 .card-content {
-  width: 80%;
-  padding: 20px;
+  width: 100%;
+  /* padding: 20px; */
 }
 
 .features {
@@ -177,6 +259,12 @@ h2 {
   color: darkgrey;
 }
 
+.last-li {
+  color: #2500f9;
+  list-style-type: none;
+  margin: 15px 0 15px 0;
+}
+
 a {
   display: inline-block;
   color: #fff;
@@ -186,18 +274,9 @@ a {
   line-height: 36px;
   text-decoration: none;
   text-transform: normal;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
-    0 3px 1px -2px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2); */
 }
-
-/* FOOTER */
-/* 
-.footer {
-  background-color: #b9b9b8;
-  height: 9.6rem;
-  padding: 0 4.8rem;
-  width: 100%;
-} */
 
 /* BUTTONS */
 
@@ -205,13 +284,21 @@ a {
 .btn--full:visited {
   background-color: #2500f9;
   color: #fff;
-  border-radius: 30px;
+  border-radius: 20px;
 }
 
 #first .btn,
 #second .btn {
-  border-radius: 30px;
-  background-color: blue;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  background-color: #2500f9;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
 }
 
 .btn:link,
@@ -219,7 +306,6 @@ a {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  transition: 0.3s;
   transition: all 0.3s;
   background-color: #fff;
 }
