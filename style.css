@@ -198,7 +198,7 @@ body {
 }
 
 .card-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   line-height: 36px;
 }
@@ -209,7 +209,7 @@ body {
   line-height: 18px;
   color: darkgrey;
   /* margin: 10%; */
-
+  text-align: center;
   margin-bottom: 10%;
 }
 
@@ -223,8 +223,12 @@ h2 {
   margin-bottom: 1rem;
 }
 
+#zero-price {
+  margin-left: -1rem;
+}
+
 .price {
-  padding: 14px;
+  /* padding: 14px; */
 }
 
 .price:after {
@@ -313,13 +317,4 @@ a {
   font-family: inherit;
   transition: all 0.3s;
   background-color: #fff;
-}
-
-#zero-price:after {
-  content: '/month';
-  font-size: 20px;
-  position: absolute;
-  margin-left: 5rem;
-  margin-top: -8rem;
-  color: #b9b9b8;
 }
