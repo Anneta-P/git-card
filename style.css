@@ -86,6 +86,7 @@ body {
   top: 50%;
   transform: translateY(-50%);
   /* font-weight: bolder; */
+  cursor: pointer;
 }
 
 .switch input::before {
@@ -138,8 +139,8 @@ body {
 }
 
 .switch input:not(:checked)::after {
-  color: lightgray;
-  transition: color 0.5s 0.2s;
+  color: #fff;
+  transition: color 0.5s;
 }
 
 .switch input:not(:checked) + label {
@@ -147,6 +148,7 @@ body {
   right: 0;
   background: #2500f9;
   transition: left 0.4s 0.2s, right 0.5s, background 0.35s;
+  color: fff;
 }
 
 /* SECRION-CARDS */
